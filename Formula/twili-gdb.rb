@@ -1,4 +1,4 @@
-class Gdb < Formula
+class TwiliGdb < Formula
   desc "GNU debugger"
   homepage "https://www.gnu.org/software/gdb/"
   url "https://github.com/veritas501/twili-gdb/archive/refs/heads/master.zip"
