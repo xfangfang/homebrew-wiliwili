@@ -1,9 +1,8 @@
 class TwiliGdb < Formula
   desc "GNU debugger"
   homepage "https://www.gnu.org/software/gdb/"
-  url "https://github.com/veritas501/twili-gdb/archive/refs/heads/master.zip"
   license "GPL-3.0-or-later"
-  head "https://github.com/veritas501/twili-gdb.git", branch: "master"
+  head "https://github.com/xfangfang/twili-gdb.git", branch: "master"
 
   depends_on arch: :x86_64 # gdb is not supported on macOS ARM
   depends_on "gmp"
