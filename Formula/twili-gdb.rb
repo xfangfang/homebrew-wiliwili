@@ -32,7 +32,7 @@ class TwiliGdb < Formula
   def install
     args = %W[
       --target=twili
-      --enable-targets=twili
+      --enable-targets=all
       --disable-sim
       --prefix=#{prefix}
       --disable-debug
