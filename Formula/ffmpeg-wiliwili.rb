@@ -42,6 +42,7 @@ EOS
         --disable-postproc
         --disable-doc
         --disable-debug
+        --enable-network
         --disable-protocols
 	    --enable-protocol='file,http,tcp,udp,rtmp,hls,https,tls'
         --disable-encoders
