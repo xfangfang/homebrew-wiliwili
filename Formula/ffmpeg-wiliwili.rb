@@ -33,10 +33,13 @@ EOS
         --host-ldflags=#{ENV.ldflags}
         --enable-gpl
         --enable-libxml2
+        --disable-autodetect
         --disable-libjack
         --disable-indev=jack
         --disable-programs
+        --disable-videotoolbox
         --disable-avdevice
+        --disable-postproc
         --disable-doc
         --disable-debug
         --disable-protocols
