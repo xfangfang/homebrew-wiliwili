@@ -56,4 +56,4 @@ class FfmpegWiliwili < Formula
       system bin/"ffmpeg", "-filter_complex", "testsrc=rate=1:duration=1", mp4out
       assert_predicate mp4out, :exist?
     end
-  end
+end
