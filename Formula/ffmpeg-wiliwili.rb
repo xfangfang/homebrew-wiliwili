@@ -8,9 +8,9 @@ class FfmpegWiliwili < Formula
     url "https://ffmpeg.org/releases/4.4.3.tar.gz"
   
     keg_only <<EOS
-  it is intended to only be used for building Macast.
-  This formula is not recommended for daily use and has no binaraies (ffmpeg, ffplay etc.)
-  EOS
+it is intended to only be used for building wiliwili.
+This formula is not recommended for daily use and has no binaraies (ffmpeg, ffplay etc.)
+EOS
   
     depends_on "nasm" => :build
     depends_on "pkg-config" => :build
@@ -56,4 +56,4 @@ class FfmpegWiliwili < Formula
       system bin/"ffmpeg", "-filter_complex", "testsrc=rate=1:duration=1", mp4out
       assert_predicate mp4out, :exist?
     end
-end
+  end
