@@ -6,7 +6,7 @@ class FfmpegWiliwili < Formula
     desc "Play, record, convert, and stream audio and video"
     homepage "https://ffmpeg.org/"
     url "https://ffmpeg.org/releases/ffmpeg-5.1.2.tar.gz"
-    sha256 "619e706d662c8420859832ddc259cd4d4096a48a2ce1eefd052db9e440eef3dc"
+    sha256 "87fe8defa37ce5f7449e36047171fed5e4c3f4bb73eaccea8c954ee81393581c"
   
     keg_only <<EOS
 it is intended to only be used for building wiliwili.
