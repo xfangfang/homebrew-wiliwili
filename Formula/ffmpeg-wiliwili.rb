@@ -6,6 +6,7 @@ class FfmpegWiliwili < Formula
     desc "Play, record, convert, and stream audio and video"
     homepage "https://ffmpeg.org/"
     url "https://ffmpeg.org/releases/ffmpeg-4.4.3.tar.gz"
+    sha256 "f7ec99140aca68fa5ad706b67f5cebfefd18d7bb91e2ee2a28b837b85991fe38"
   
     keg_only <<EOS
 it is intended to only be used for building wiliwili.
@@ -30,6 +31,7 @@ EOS
         --host-cflags=#{ENV.cflags}
         --host-ldflags=#{ENV.ldflags}
         --enable-gpl
+        --enable-libxml2
         --disable-libjack
         --disable-indev=jack
         --disable-programs
