@@ -17,6 +17,11 @@ EOS
       depends_on "nasm" => :build
     end
     depends_on "pkg-config" => :build
+    depends_on "dav1d"
+    depends_on "gnutls"
+    depends_on "freetype"
+    depends_on "fontconfig"
+    depends_on "libass"
     uses_from_macos "bzip2"
     uses_from_macos "libxml2"
     uses_from_macos "zlib"
@@ -32,6 +37,7 @@ EOS
         --host-cflags=#{ENV.cflags}
         --host-ldflags=#{ENV.ldflags}
         --enable-gpl
+        --enable-gnutls
         --enable-libxml2
         --disable-autodetect
         --disable-libjack
@@ -43,6 +49,12 @@ EOS
         --disable-doc
         --disable-debug
         --enable-network
+        --enable-libdav1d
+        --enable-zlib
+        --enable-bzlib
+	    --enable-libass
+        --enable-libfreetype
+	    --enable-libfontconfig
         --disable-protocols
 	    --enable-protocol='file,http,tcp,udp,rtmp,hls,https,tls'
         --disable-encoders
