@@ -5,9 +5,8 @@
 class MpvWiliwili < Formula
     desc "Media player based on MPlayer and mplayer2"
     homepage "https://mpv.io"
-    url "https://github.com/mpv-player/mpv/archive/v0.34.1.tar.gz"
-    sha256 "32ded8c13b6398310fa27767378193dc1db6d78b006b70dbcbd3123a1445e746"
-    head "https://github.com/mpv-player/mpv.git", branch: "master"
+    url "https://github.com/mpv-player/mpv/archive/v0.35.0.tar.gz"
+    sha256 "dc411c899a64548250c142bf1fa1aa7528f1b4398a24c86b816093999049ec00"
   
     keg_only "it is intended to only be used for building wiliwili. This formula is not recommended for daily use"
   
@@ -24,6 +23,14 @@ class MpvWiliwili < Formula
       # or getdefaultlocale in docutils. Force the default c/posix locale since
       # that's good enough for building the manpage.
       ENV["LC_ALL"] = "C"
+
+      # Avoid unreliable macOS SDK version detection
+      # See https://github.com/mpv-player/mpv/pull/8939
+      if OS.mac?
+        sdk = (MacOS.version == :big_sur) ? MacOS::Xcode.sdk : MacOS.sdk
+        ENV["MACOS_SDK"] = sdk.path
+        ENV["MACOS_SDK_VERSION"] = "#{sdk.version}.0"
+      end
   
       args = %W[
         --prefix=#{prefix}
