@@ -13,7 +13,7 @@ class MpvWiliwili < Formula
   
     depends_on "docutils" => :build
     depends_on "pkg-config" => :build
-    depends_on "python@3.9" => :build
+    depends_on "python@3.10" => :build
     depends_on xcode: :build
   
     depends_on "ffmpeg-wiliwili"
@@ -35,9 +35,9 @@ class MpvWiliwili < Formula
         --zshdir=#{zsh_completion}
       ]
   
-      system Formula["python@3.9"].opt_bin/"python3", "bootstrap.py"
-      system Formula["python@3.9"].opt_bin/"python3", "waf", "configure", *args
-      system Formula["python@3.9"].opt_bin/"python3", "waf", "install"
+      system Formula["python@3.10"].opt_bin/"python3", "bootstrap.py"
+      system Formula["python@3.10"].opt_bin/"python3", "waf", "configure", *args
+      system Formula["python@3.10"].opt_bin/"python3", "waf", "install"
     end
   
     test do
