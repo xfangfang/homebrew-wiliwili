@@ -2,21 +2,21 @@
 # Last check with upstream: 356dc6f78059f1706bc8c6c44545c262dca43c3e
 # https://github.com/Homebrew/homebrew-core/blob/master/Formula/mpv.rb
 
-class MpvMacast < Formula
+class MpvWiliwili < Formula
     desc "Media player based on MPlayer and mplayer2"
     homepage "https://mpv.io"
     url "https://github.com/mpv-player/mpv/archive/v0.34.1.tar.gz"
     sha256 "32ded8c13b6398310fa27767378193dc1db6d78b006b70dbcbd3123a1445e746"
     head "https://github.com/mpv-player/mpv.git", branch: "master"
   
-    keg_only "it is intended to only be used for building Macast. This formula is not recommended for daily use"
+    keg_only "it is intended to only be used for building wiliwili. This formula is not recommended for daily use"
   
     depends_on "docutils" => :build
     depends_on "pkg-config" => :build
     depends_on "python@3.9" => :build
     depends_on xcode: :build
   
-    depends_on "ffmpeg-macast"
+    depends_on "ffmpeg-wiliwili"
     depends_on "libass"
   
     def install
