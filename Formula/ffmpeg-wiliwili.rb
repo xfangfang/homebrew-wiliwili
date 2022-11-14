@@ -5,17 +5,18 @@
 class FfmpegWiliwili < Formula
     desc "Play, record, convert, and stream audio and video"
     homepage "https://ffmpeg.org/"
-    url "https://ffmpeg.org/releases/ffmpeg-4.4.3.tar.gz"
-    sha256 "f7ec99140aca68fa5ad706b67f5cebfefd18d7bb91e2ee2a28b837b85991fe38"
+    url "https://ffmpeg.org/releases/ffmpeg-5.1.2.tar.gz"
+    sha256 "619e706d662c8420859832ddc259cd4d4096a48a2ce1eefd052db9e440eef3dc"
   
     keg_only <<EOS
 it is intended to only be used for building wiliwili.
 This formula is not recommended for daily use and has no binaraies (ffmpeg, ffplay etc.)
 EOS
   
-    depends_on "nasm" => :build
+    on_intel do
+      depends_on "nasm" => :build
+    end
     depends_on "pkg-config" => :build
-  
     uses_from_macos "bzip2"
     uses_from_macos "libxml2"
     uses_from_macos "zlib"
@@ -35,21 +36,19 @@ EOS
         --disable-libjack
         --disable-indev=jack
         --disable-programs
+        --disable-avdevice
+        --disable-doc
+        --disable-debug
+        --disable-protocols
+	    --enable-protocol='file,http,tcp,udp,rtmp,hls,https,tls'
+        --disable-encoders
       ]
-  
-        # Needs corefoundation, coremedia, corevideo
-       args << "--enable-videotoolbox" if OS.mac?
-       args << "--enable-neon" if Hardware::CPU.arm?
+
+      args << "--enable-neon" if Hardware::CPU.arm?
   
       system "./configure", *args
       system "make", "install"
-  
-      # Build and install additional FFmpeg tools
-      system "make", "alltools"
-      bin.install Dir["tools/*"].select { |f| File.executable? f }
-  
-      # Fix for Non-executables that were installed to bin/
-      mv bin/"python", pkgshare/"python", force: true
+
     end
   
     test do

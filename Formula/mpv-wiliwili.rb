@@ -35,6 +35,9 @@ class MpvWiliwili < Formula
       args = %W[
         --prefix=#{prefix}
         --disable-debug-build
+        --enable-libmpv-shared
+        --disable-jpeg
+        --disable-libavdevice
         --confdir=#{etc}/mpv
         --datadir=#{pkgshare}
         --mandir=#{man}
