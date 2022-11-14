@@ -5,7 +5,7 @@
 class FfmpegWiliwili < Formula
     desc "Play, record, convert, and stream audio and video"
     homepage "https://ffmpeg.org/"
-    url "https://ffmpeg.org/releases/4.4.3.tar.gz"
+    url "https://ffmpeg.org/releases/ffmpeg-4.4.3.tar.gz"
   
     keg_only <<EOS
 it is intended to only be used for building wiliwili.
