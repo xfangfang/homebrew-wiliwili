@@ -8,6 +8,12 @@ class FfmpegWiliwili < Formula
   url "https://ffmpeg.org/releases/ffmpeg-5.1.2.tar.gz"
   sha256 "87fe8defa37ce5f7449e36047171fed5e4c3f4bb73eaccea8c954ee81393581c"
 
+  bottle do
+    root_url "https://github.com/xfangfang/homebrew-wiliwili/releases/download/ffmpeg-wiliwili-5.1.2"
+    rebuild 1
+    sha256 cellar: :any, monterey: "5ded3bd536214d1a3b5508af6b5923fec50d14fa97da3e26269dbddb351c59a6"
+  end
+
   keg_only <<~EOS
     it is intended to only be used for building wiliwili.
     This formula is not recommended for daily use and has no binaraies (ffmpeg, ffplay etc.)
