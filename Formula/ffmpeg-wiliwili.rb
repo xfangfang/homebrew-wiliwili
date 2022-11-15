@@ -8,20 +8,18 @@ class FfmpegWiliwili < Formula
   url "https://ffmpeg.org/releases/ffmpeg-5.1.2.tar.gz"
   sha256 "87fe8defa37ce5f7449e36047171fed5e4c3f4bb73eaccea8c954ee81393581c"
 
-  keg_only <<EOS
-it is intended to only be used for building wiliwili.
-This formula is not recommended for daily use and has no binaraies (ffmpeg, ffplay etc.)
-EOS
+  keg_only <<~EOS
+    it is intended to only be used for building wiliwili.
+    This formula is not recommended for daily use and has no binaraies (ffmpeg, ffplay etc.)
+  EOS
 
-  on_intel do
-    depends_on "nasm" => :build
-  end
   depends_on "pkg-config" => :build
   depends_on "dav1d"
-  depends_on "freetype"
   depends_on "fontconfig"
+  depends_on "freetype"
   depends_on "gnutls"
   depends_on "libass"
+
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
@@ -31,10 +29,13 @@ EOS
     depends_on "libxv"
   end
 
+  on_intel do
+    depends_on "nasm" => :build
+  end
+
   fails_with gcc: "5"
 
   def install
-
     args = %W[
       --prefix=#{prefix}
       --enable-shared
