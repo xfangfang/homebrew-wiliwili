@@ -48,7 +48,6 @@ class MpvWiliwili < Formula
       --disable-lua
       --disable-javascript
       --disable-macos-touchbar
-      --disable-macos-cocoa-cb
       --disable-macos-media-player
       --disable-cplayer
       --confdir=#{etc}/mpv
