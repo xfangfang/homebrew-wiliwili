@@ -75,7 +75,7 @@ class FfmpegWiliwili < Formula
 
   test do
     fake_test = testpath/"a.log"
-    system "touch", fake_test
+    touch fake_test
     assert_predicate fake_test, :exist?
   end
 end
