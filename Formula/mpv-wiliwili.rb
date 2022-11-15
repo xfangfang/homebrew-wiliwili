@@ -8,6 +8,12 @@ class MpvWiliwili < Formula
   url "https://github.com/mpv-player/mpv/archive/v0.35.0.tar.gz"
   sha256 "dc411c899a64548250c142bf1fa1aa7528f1b4398a24c86b816093999049ec00"
 
+  bottle do
+    root_url "https://github.com/xfangfang/homebrew-wiliwili/releases/download/mpv-wiliwili-0.35.0"
+    rebuild 1
+    sha256 cellar: :any, monterey: "f8af4bf3ae3d05c44be89d6be07d54bdf57c62d1867d3f62b4705a313584693d"
+  end
+
   keg_only "it is intended to only be used for building wiliwili. This formula is not recommended for daily use"
 
   depends_on "docutils" => :build
