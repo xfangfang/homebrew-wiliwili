@@ -17,7 +17,13 @@ class MpvWiliwili < Formula
   
     depends_on "ffmpeg-wiliwili"
     depends_on "libass"
+
+    on_linux do
+        depends_on "alsa-lib"
+    end
   
+    fails_with gcc: "5" # ffmpeg is compiled with GCC
+
     def install
       # LANG is unset by default on macOS and causes issues when calling getlocale
       # or getdefaultlocale in docutils. Force the default c/posix locale since
@@ -45,9 +51,10 @@ class MpvWiliwili < Formula
         --zshdir=#{zsh_completion}
       ]
   
-      system Formula["python@3.10"].opt_bin/"python3", "bootstrap.py"
-      system Formula["python@3.10"].opt_bin/"python3", "waf", "configure", *args
-      system Formula["python@3.10"].opt_bin/"python3", "waf", "install"
+      python3 = "python3.10"
+      system python3, "bootstrap.py"
+      system python3, "waf", "configure", *args
+      system python3, "waf", "install"
     end
   
     test do

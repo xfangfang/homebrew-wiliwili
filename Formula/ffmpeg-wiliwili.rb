@@ -16,6 +16,10 @@ EOS
     on_intel do
       depends_on "nasm" => :build
     end
+    on_linux do
+        depends_on "alsa-lib"
+        depends_on "libxv"
+    end
     depends_on "pkg-config" => :build
     depends_on "dav1d"
     depends_on "gnutls"
@@ -26,6 +30,8 @@ EOS
     uses_from_macos "libxml2"
     uses_from_macos "zlib"
   
+    fails_with gcc: "5"
+    
     def install
   
       args = %W[
