@@ -44,6 +44,13 @@ class MpvWiliwili < Formula
       --enable-libmpv-shared
       --disable-jpeg
       --disable-libavdevice
+      --disable-swift
+      --disable-lua
+      --disable-javascript
+      --disable-macos-touchbar
+      --disable-macos-cocoa-cb
+      --disable-macos-media-player
+      --disable-cplayer
       --confdir=#{etc}/mpv
       --datadir=#{pkgshare}
       --mandir=#{man}

@@ -51,7 +51,7 @@ class FfmpegWiliwili < Formula
       --disable-libjack
       --disable-indev=jack
       --disable-programs
-      --disable-videotoolbox
+      --enable-videotoolbox
       --disable-avdevice
       --disable-postproc
       --disable-doc
@@ -63,8 +63,7 @@ class FfmpegWiliwili < Formula
       --enable-libass
       --enable-libfreetype
       --enable-libfontconfig
-      --disable-protocols
-      --enable-protocol='file,http,tcp,udp,rtmp,hls,https,tls'
+      --enable-protocols
       --disable-encoders
     ]
 
