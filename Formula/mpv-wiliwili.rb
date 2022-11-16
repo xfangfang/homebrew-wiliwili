@@ -14,7 +14,7 @@ class MpvWiliwili < Formula
     sha256 cellar: :any, monterey: "f8af4bf3ae3d05c44be89d6be07d54bdf57c62d1867d3f62b4705a313584693d"
   end
 
-  keg_only "it is intended to only be used for building wiliwili. This formula is not recommended for daily use"
+  keg_only "it is intended to only be used for building wiliwili"
 
   depends_on "docutils" => :build
   depends_on "pkg-config" => :build
