@@ -23,8 +23,8 @@ class FfmpegWiliwili < Formula
   depends_on "dav1d"
   depends_on "fontconfig"
   depends_on "freetype"
-  depends_on "openssl"
   depends_on "libass"
+  depends_on "openssl"
 
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
