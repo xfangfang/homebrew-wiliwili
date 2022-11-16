@@ -23,8 +23,8 @@ class FfmpegWiliwili < Formula
   depends_on "dav1d"
   depends_on "fontconfig"
   depends_on "freetype"
-  depends_on "gnutls"
   depends_on "libass"
+  depends_on "openssl"
 
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
@@ -51,7 +51,11 @@ class FfmpegWiliwili < Formula
       --host-cflags=#{ENV.cflags}
       --host-ldflags=#{ENV.ldflags}
       --enable-gpl
-      --enable-gnutls
+      --enable-openssl
+      --enable-libdav1d
+      --enable-libass
+      --enable-libfreetype
+      --enable-libfontconfig
       --enable-libxml2
       --disable-autodetect
       --disable-libjack
@@ -63,12 +67,8 @@ class FfmpegWiliwili < Formula
       --disable-doc
       --disable-debug
       --enable-network
-      --enable-libdav1d
       --enable-zlib
       --enable-bzlib
-      --enable-libass
-      --enable-libfreetype
-      --enable-libfontconfig
       --enable-protocols
       --disable-encoders
     ]
