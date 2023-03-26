@@ -3,7 +3,7 @@
 This repo contains custom mpv and ffmpeg homebrew tap for wiliwili.
 
 ```
-brew tab xfangfang/wiliwili
+brew tap xfangfang/wiliwili
 brew install mpv-wiliwili
 ```
 

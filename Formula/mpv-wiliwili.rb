@@ -5,8 +5,8 @@
 class MpvWiliwili < Formula
   desc "Media player based on MPlayer and mplayer2"
   homepage "https://mpv.io"
-  url "https://github.com/mpv-player/mpv/archive/v0.35.0.tar.gz"
-  sha256 "dc411c899a64548250c142bf1fa1aa7528f1b4398a24c86b816093999049ec00"
+  url "https://github.com/mpv-player/mpv/archive/v0.35.1.tar.gz"
+  sha256 "41df981b7b84e33a2ef4478aaf81d6f4f5c8b9cd2c0d337ac142fc20b387d1a9"
 
   bottle do
     root_url "https://github.com/xfangfang/homebrew-wiliwili/releases/download/mpv-wiliwili-0.35.0"
@@ -24,6 +24,7 @@ class MpvWiliwili < Formula
 
   depends_on "ffmpeg-wiliwili"
   depends_on "libass"
+  depends_on "luajit"
 
   on_linux do
     depends_on "alsa-lib"
@@ -52,7 +53,6 @@ class MpvWiliwili < Formula
       --disable-jpeg
       --disable-libavdevice
       --disable-swift
-      --disable-lua
       --disable-javascript
       --disable-macos-touchbar
       --disable-macos-media-player
