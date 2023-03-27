@@ -23,9 +23,7 @@ jobs:
           key: ${{ runner.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
           restore-keys: ${{ runner.os }}-rubygems-
 
-      - env:
-          SUPER_SECRET: ${{ secrets.Homebrew }}
-        run: echo "export HOMEBREW_GITHUB_API_TOKEN=$SUPER_SECRET" >> /Users/runner/.bash_profile  
+      - run: echo 'export HOMEBREW_GITHUB_API_TOKEN=${{ secrets.GITHUB_TOKEN }}' >> ~/.bash_profile  
 
       - name: Install Homebrew Bundler RubyGems
         if: steps.cache.outputs.cache-hit != 'true'
