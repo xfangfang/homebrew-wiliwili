@@ -39,7 +39,6 @@ class MpvWiliwili < Formula
     ENV["LC_ALL"] = "C"
 
     # Avoid unreliable macOS SDK version detection
-    # See https://github.com/mpv-player/mpv/pull/8939
     if OS.mac?
       sdk = (MacOS.version == :big_sur) ? MacOS::Xcode.sdk : MacOS.sdk
       ENV["MACOS_SDK"] = sdk.path
