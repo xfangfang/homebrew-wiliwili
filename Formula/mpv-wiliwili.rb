@@ -15,7 +15,7 @@ class MpvWiliwili < Formula
     sha256 cellar: :any, big_sur:  "80d6ace47bd8069c0ced7b8a78a8157157ae8e0a9a1ba6c8579b0f2988b4bfd3"
   end
 
-  keg_only "it is intended to only be used for building wiliwili"
+  keg_only "it is intended to be used for building wiliwili"
 
   depends_on "docutils" => :build
   depends_on "pkg-config" => :build
