@@ -24,7 +24,6 @@ class MpvWiliwili < Formula
 
   depends_on "ffmpeg-wiliwili"
   depends_on "libass"
-  depends_on "luajit"
 
   on_linux do
     depends_on "alsa-lib"
@@ -42,7 +41,6 @@ class MpvWiliwili < Formula
     args = %W[
       -Dlibmpv=true
       -Dcplayer=false
-      -Dlua=luajit
 
       -Dswift-build=disabled
       -Dmacos-cocoa-cb=disabled
