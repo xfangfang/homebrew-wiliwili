@@ -7,6 +7,7 @@ class FfmpegWiliwili < Formula
   homepage "https://ffmpeg.org/"
   url "https://ffmpeg.org/releases/ffmpeg-5.1.2.tar.gz"
   sha256 "87fe8defa37ce5f7449e36047171fed5e4c3f4bb73eaccea8c954ee81393581c"
+  revision 1
 
   bottle do
     root_url "https://github.com/xfangfang/homebrew-wiliwili/releases/download/ffmpeg-wiliwili-5.1.2"
@@ -24,8 +25,8 @@ class FfmpegWiliwili < Formula
   depends_on "dav1d"
   depends_on "fontconfig"
   depends_on "freetype"
+  depends_on "gnutls"
   depends_on "libass"
-  depends_on "openssl"
 
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
@@ -52,7 +53,7 @@ class FfmpegWiliwili < Formula
       --host-cflags=#{ENV.cflags}
       --host-ldflags=#{ENV.ldflags}
       --enable-gpl
-      --enable-openssl
+      --enable-gnutls
       --enable-libdav1d
       --enable-libass
       --enable-libfreetype
@@ -62,18 +63,16 @@ class FfmpegWiliwili < Formula
       --disable-libjack
       --disable-indev=jack
       --disable-programs
-      --enable-videotoolbox
-      --disable-avdevice
       --disable-postproc
       --disable-doc
       --disable-debug
       --enable-network
       --enable-zlib
       --enable-bzlib
-      --enable-protocols
       --disable-encoders
     ]
 
+    args << "--enable-videotoolbox" if OS.mac?
     args << "--enable-neon" if Hardware::CPU.arm?
 
     system "./configure", *args
