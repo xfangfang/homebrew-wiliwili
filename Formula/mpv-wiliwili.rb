@@ -42,6 +42,7 @@ class MpvWiliwili < Formula
     args = %W[
       -Dlibmpv=true
       -Dcplayer=false
+      -Dlua=disabled
 
       -Dswift-build=disabled
       -Dmacos-cocoa-cb=disabled
