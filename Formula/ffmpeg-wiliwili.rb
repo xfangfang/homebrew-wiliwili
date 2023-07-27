@@ -5,8 +5,8 @@
 class FfmpegWiliwili < Formula
   desc "Play, record, convert, and stream audio and video"
   homepage "https://ffmpeg.org/"
-  url "https://ffmpeg.org/releases/ffmpeg-5.1.2.tar.gz"
-  sha256 "87fe8defa37ce5f7449e36047171fed5e4c3f4bb73eaccea8c954ee81393581c"
+  url "https://ffmpeg.org/releases/ffmpeg-6.0.tar.xz"
+  sha256 "57be87c22d9b49c112b6d24bc67d42508660e6b718b3db89c44e47e289137082"
   revision 1
 
   bottle do
@@ -24,8 +24,8 @@ class FfmpegWiliwili < Formula
   depends_on "dav1d"
   depends_on "fontconfig"
   depends_on "freetype"
-  depends_on "gnutls"
   depends_on "libass"
+  depends_on "mbedtls"
 
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
@@ -52,7 +52,7 @@ class FfmpegWiliwili < Formula
       --host-cflags=#{ENV.cflags}
       --host-ldflags=#{ENV.ldflags}
       --enable-gpl
-      --enable-gnutls
+      --enable-mbedtls
       --enable-libdav1d
       --enable-libass
       --enable-libfreetype
