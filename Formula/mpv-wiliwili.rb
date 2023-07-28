@@ -17,6 +17,7 @@ class MpvWiliwili < Formula
 
   keg_only "it is intended to only be used for building wiliwili 1"
 
+  depends_on "docutils" => :build
   depends_on "meson" => :build
   depends_on "pkg-config" => :build
   depends_on xcode: :build
