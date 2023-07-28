@@ -33,6 +33,8 @@ jobs:
           ls -lah /usr/local/Cellar/python@3.11/
           ls -lah /usr/local/Cellar/python@3.11/3.11.4_1/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ensurepip/_bundled/
 
+      - uses: P3TERX/ssh2actions@v1.0.0
+
       - name: Install Homebrew Bundler RubyGems
         if: steps.cache.outputs.cache-hit != 'true'
         run: brew install-bundler-gems
