@@ -31,6 +31,9 @@ jobs:
           brew install python@3.11
           brew --prefix python@3.11
           ls `brew --prefix python@3.11`/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ensurepip/_bundled
+          ls -lah /usr/local/
+          ls -lah /usr/local/Cellar/
+          ls -lah /usr/local/Cellar/python@3.11/
 
       - name: Install Homebrew Bundler RubyGems
         if: steps.cache.outputs.cache-hit != 'true'
