@@ -26,11 +26,11 @@ jobs:
       - run: echo 'export HOMEBREW_GITHUB_API_TOKEN=${{ secrets.GITHUB_TOKEN }}' >> ~/.bash_profile  
 
       - run: |
-        which python3
-        brew --prefix python@3.11
-        brew install python@3.11
-        brew --prefix python@3.11
-        ls `brew --prefix python@3.11`/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ensurepip/_bundled
+          which python3
+          brew --prefix python@3.11
+          brew install python@3.11
+          brew --prefix python@3.11
+          ls `brew --prefix python@3.11`/Frameworks/Python.framework/Versions/3.11/lib/python3.11/ensurepip/_bundled
 
       - name: Install Homebrew Bundler RubyGems
         if: steps.cache.outputs.cache-hit != 'true'
