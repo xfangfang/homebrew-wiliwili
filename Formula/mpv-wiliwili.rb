@@ -43,7 +43,6 @@ class MpvWiliwili < Formula
       -Dcplayer=false
       -Dlua=disabled
 
-      -Dswift-build=disabled
       -Dmacos-cocoa-cb=disabled
       -Dmacos-media-player=disabled
       -Dmacos-touchbar=disabled
