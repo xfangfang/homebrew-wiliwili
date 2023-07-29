@@ -23,8 +23,8 @@ class FfmpegWiliwiliAT6 < Formula
   depends_on "dav1d"
   depends_on "fontconfig"
   depends_on "freetype"
+  depends_on "gnutls"
   depends_on "libass"
-  depends_on "mbedtls"
 
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
