@@ -24,8 +24,9 @@ class MpvWiliwili < Formula
   depends_on "ffmpeg-wiliwili@6"
   depends_on "libass"
 
-  on_linux do
-    depends_on "alsa-lib"
+  stable do
+    # Fix cannot find macos sdk when swift-build is disabled.
+    patch :DATA
   end
 
   def install
@@ -42,6 +43,7 @@ class MpvWiliwili < Formula
       -Dcplayer=false
       -Dlua=disabled
 
+      -Dswift-build=disabled
       -Dmacos-cocoa-cb=disabled
       -Dmacos-media-player=disabled
       -Dmacos-touchbar=disabled
@@ -64,3 +66,33 @@ class MpvWiliwili < Formula
     assert_predicate fake_test, :exist?
   end
 end
+
+__END__
+diff --git a/meson.build b/meson.build
+index f9fe4e7263..5eaea21968 100644
+--- a/meson.build
++++ b/meson.build
+@@ -1473,16 +1473,16 @@ endif
+ 
+ 
+ # macOS features
+-macos_sdk_version_py = find_program(join_paths(source_root, 'TOOLS', 'macos-sdk-version.py'),
+-                                    required: get_option('swift-build').require(darwin))
+-macos_sdk_path = ''
+-macos_sdk_version = '0.0'
+-if macos_sdk_version_py.found()
++macos_sdk_version_py = find_program(join_paths(source_root, 'TOOLS',
++                                    'macos-sdk-version.py'))
++macos_sdk_info = ['', '0.0']
++if darwin
+     macos_sdk_info = run_command(macos_sdk_version_py, check: true).stdout().split(',')
+-    macos_sdk_path = macos_sdk_info[0].strip()
+-    macos_sdk_version = macos_sdk_info[1]
+ endif
+ 
++macos_sdk_path = macos_sdk_info[0].strip()
++macos_sdk_version = macos_sdk_info[1]
++
+ if macos_sdk_path != ''
+     message('Detected macOS sdk path: ' + macos_sdk_path)
+ endif
