@@ -10,8 +10,9 @@ class FfmpegWiliwiliAT6 < Formula
 
   bottle do
     root_url "https://github.com/xfangfang/homebrew-wiliwili/releases/download/ffmpeg-wiliwili@6-6.0"
-    sha256 cellar: :any, monterey: "fd7bdc2ce0e0019d95a2c1f8dfed7df9a67713da9a7a16f67a042ef37eb56562"
-    sha256 cellar: :any, big_sur:  "4495db4bc68e93827d4b1d27ea51df3e03ec51f9f8089b09b4adee6bf4de8971"
+    rebuild 1
+    sha256 cellar: :any, monterey: "73da7df266e403f4c3d1cfdc1fb5a89889eac39728a79a35a1a83f34d8143026"
+    sha256 cellar: :any, big_sur:  "bcb57d025839740605d6ba8c539c3e3b5a86c140127890dd35ed8b6bed69e392"
   end
 
   keg_only <<~EOS
