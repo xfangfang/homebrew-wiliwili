@@ -51,7 +51,7 @@ class FfmpegWiliwiliAT6 < Formula
       --host-cflags=#{ENV.cflags}
       --host-ldflags=#{ENV.ldflags}
       --enable-gpl
-      --enable-mbedtls
+      --enable-gnutls
       --enable-libdav1d
       --enable-libass
       --enable-libfreetype
