@@ -26,7 +26,7 @@ class MpvWiliwili < Formula
 
   patch do
     # Fix cannot find macos sdk when swift-build is disabled.
-    url "https://raw.githubusercontent.com/xfangfang/homebrew-wiliwili/main/mpv_swift_patch.patch"
+    url "https://raw.githubusercontent.com/xfangfang/homebrew-wiliwili/ca41653396be315cefdc8942f0232366f7ff39b3/mpv_swift_patch.patch"
     sha256 "f203408d7f3c9898c24b07ec7ba16aaaa8192c466abebb4623032f506792b2de"
   end
 
