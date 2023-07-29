@@ -24,8 +24,10 @@ class MpvWiliwili < Formula
   depends_on "ffmpeg-wiliwili@6"
   depends_on "libass"
 
-  on_linux do
-    depends_on "alsa-lib"
+  patch do
+    # Fix cannot find macos sdk when swift-build is disabled.
+    url "https://raw.githubusercontent.com/xfangfang/homebrew-wiliwili/main/mpv_swift_patch.patch"
+    sha256 "f203408d7f3c9898c24b07ec7ba16aaaa8192c466abebb4623032f506792b2de"
   end
 
   def install
@@ -42,6 +44,7 @@ class MpvWiliwili < Formula
       -Dcplayer=false
       -Dlua=disabled
 
+      -Dswift-build=disabled
       -Dmacos-cocoa-cb=disabled
       -Dmacos-media-player=disabled
       -Dmacos-touchbar=disabled
