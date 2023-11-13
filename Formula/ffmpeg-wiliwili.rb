@@ -50,7 +50,6 @@ class FfmpegWiliwili < Formula
       --cc=#{ENV.cc}
       --host-cflags=#{ENV.cflags}
       --host-ldflags=#{ENV.ldflags}
-      --extra-ldflags="-Wl,-ld_classic"
       --enable-gpl
       --enable-gnutls
       --enable-libdav1d
