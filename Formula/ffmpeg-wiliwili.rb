@@ -5,9 +5,8 @@
 class FfmpegWiliwili < Formula
   desc "Play, record, convert, and stream audio and video"
   homepage "https://ffmpeg.org/"
-  url "https://ffmpeg.org/releases/ffmpeg-5.1.2.tar.gz"
-  sha256 "87fe8defa37ce5f7449e36047171fed5e4c3f4bb73eaccea8c954ee81393581c"
-  revision 1
+  url "https://ffmpeg.org/releases/ffmpeg-6.1.tar.xz"
+  sha256 "488c76e57dd9b3bee901f71d5c95eaf1db4a5a31fe46a28654e837144207c270"
 
   bottle do
     root_url "https://github.com/xfangfang/homebrew-wiliwili/releases/download/ffmpeg-wiliwili-5.1.2_1"
@@ -51,6 +50,7 @@ class FfmpegWiliwili < Formula
       --cc=#{ENV.cc}
       --host-cflags=#{ENV.cflags}
       --host-ldflags=#{ENV.ldflags}
+      --extra-ldflags="-Wl,-ld_classic"
       --enable-gpl
       --enable-gnutls
       --enable-libdav1d
