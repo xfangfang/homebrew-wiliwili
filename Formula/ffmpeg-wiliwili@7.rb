@@ -2,7 +2,7 @@
 # Last check with upstream: 5ef3900b6178dee40629e3e058a587ef196b53b1
 # https://github.com/Homebrew/homebrew-core/blob/master/Formula/ffmpeg.rb
 
-class FfmpegWiliwili < Formula
+class FfmpegWiliwiliAT7 < Formula
   desc "Play, record, convert, and stream audio and video"
   homepage "https://ffmpeg.org/"
   url "https://ffmpeg.org/releases/ffmpeg-7.0.1.tar.xz"
