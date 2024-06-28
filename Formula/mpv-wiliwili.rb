@@ -5,8 +5,8 @@
 class MpvWiliwili < Formula
   desc "Media player based on MPlayer and mplayer2"
   homepage "https://mpv.io"
-  url "https://github.com/mpv-player/mpv/archive/refs/tags/v0.36.0.tar.gz"
-  sha256 "29abc44f8ebee013bb2f9fe14d80b30db19b534c679056e4851ceadf5a5e8bf6"
+  url "https://github.com/mpv-player/mpv/archive/refs/tags/v0.38.0.tar.gz"
+  sha256 "86d9ef40b6058732f67b46d0bbda24a074fae860b3eaae05bab3145041303066"
 
   bottle do
     root_url "https://github.com/xfangfang/homebrew-wiliwili/releases/download/mpv-wiliwili-0.36.0"
@@ -15,15 +15,16 @@ class MpvWiliwili < Formula
     sha256 cellar: :any, monterey: "fbf22cd66a730c379572812fdf086e18bb146042ec576dde7559ee8490bcc60a"
   end
 
-  keg_only "it is intended to only be used for building wiliwili 1"
+  keg_only "it is intended to only be used for building wiliwili"
 
   depends_on "docutils" => :build
   depends_on "meson" => :build
   depends_on "pkg-config" => :build
   depends_on xcode: :build
 
-  depends_on "ffmpeg-wiliwili"
+  depends_on "ffmpeg-wiliwili@7"
   depends_on "libass"
+  depends_on "libplacebo"
 
   patch do
     # Fix cannot find macos sdk when swift-build is disabled.
