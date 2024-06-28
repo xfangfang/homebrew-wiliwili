@@ -5,8 +5,8 @@
 class FfmpegWiliwili < Formula
   desc "Play, record, convert, and stream audio and video"
   homepage "https://ffmpeg.org/"
-  url "https://ffmpeg.org/releases/ffmpeg-6.1.tar.xz"
-  sha256 "488c76e57dd9b3bee901f71d5c95eaf1db4a5a31fe46a28654e837144207c270"
+  url "https://ffmpeg.org/releases/ffmpeg-7.0.1.tar.xz"
+  sha256 "bce9eeb0f17ef8982390b1f37711a61b4290dc8c2a0c1a37b5857e85bfb0e4ff"
 
   bottle do
     root_url "https://github.com/xfangfang/homebrew-wiliwili/releases/download/ffmpeg-wiliwili-6.1"
@@ -74,7 +74,7 @@ class FfmpegWiliwili < Formula
       --disable-encoders
     ]
 
-    args << "--enable-videotoolbox" if OS.mac?
+    args += %w[--enable-videotoolbox --enable-audiotoolbox] if OS.mac?
     args << "--enable-neon" if Hardware::CPU.arm?
 
     system "./configure", *args
