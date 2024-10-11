@@ -23,12 +23,9 @@ class MpvWiliwili < Formula
   depends_on xcode: :build
 
   depends_on "ffmpeg-wiliwili@7"
-  depends_on "jpeg-turbo"
   depends_on "libass"
-  depends_on "libplacebo"
-  depends_on "little-cms2"
+  depends_on "libplacebo-wiliwili"
   depends_on "luajit"
-  depends_on "vulkan-loader"
 
   def install
     # LANG is unset by default on macOS and causes issues when calling getlocale
@@ -50,6 +47,9 @@ class MpvWiliwili < Formula
       -Dmacos-touchbar=disabled
       -Dcocoa=disabled
 
+      -Dlcms2=disabled
+      -Djpeg=disabled
+      -Dvulkan=disabled
       -Dmanpage-build=disabled
       -Dhtml-build=disabled
 
