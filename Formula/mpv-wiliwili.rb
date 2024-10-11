@@ -22,8 +22,8 @@ class MpvWiliwili < Formula
   depends_on "pkg-config" => :build
   depends_on xcode: :build
 
-  depends_on "ffmpeg-wiliwili@7"
-  depends_on "libass"
+  depends_on "ffmpeg-wiliwili"
+  depends_on "libass-wiliwili"
   depends_on "libplacebo-wiliwili"
   depends_on "luajit"
 

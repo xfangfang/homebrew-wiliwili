@@ -5,14 +5,14 @@
 class FfmpegWiliwili < Formula
   desc "Play, record, convert, and stream audio and video"
   homepage "https://ffmpeg.org/"
-  url "https://ffmpeg.org/releases/ffmpeg-6.1.tar.xz"
-  sha256 "488c76e57dd9b3bee901f71d5c95eaf1db4a5a31fe46a28654e837144207c270"
+  url "https://ffmpeg.org/releases/ffmpeg-7.1.tar.xz"
+  sha256 "40973d44970dbc83ef302b0609f2e74982be2d85916dd2ee7472d30678a7abe6"
 
   bottle do
-    root_url "https://github.com/xfangfang/homebrew-wiliwili/releases/download/ffmpeg-wiliwili-6.1"
-    rebuild 1
-    sha256 cellar: :any, ventura:  "c3a03b5e689f78b21e5640b3835b280541777d8e6fb90052fed10d52c30054eb"
-    sha256 cellar: :any, monterey: "d296bc7a9a9fec5165e9bac9c60f9b9875214cc7371f2ea6bd87b9026a26c9e8"
+    root_url "https://github.com/xfangfang/homebrew-wiliwili/releases/download/ffmpeg-wiliwili@7-7.1"
+    sha256 cellar: :any, arm64_sequoia: "f8bca04becd0d86adc2980e0d4003f999201208916fdcc78fabef5a2a8eb8a41"
+    sha256 cellar: :any, arm64_sonoma:  "810a04100e3a9592d5eae3c568a46e8dd8d5d53c126a96f05de110a459d5353c"
+    sha256 cellar: :any, ventura:       "c252d5cf6683c4cb5d483869811b0840eda3ad395bb1fe23e0aac91ff61eb6d4"
   end
 
   keg_only <<~EOS
@@ -22,10 +22,9 @@ class FfmpegWiliwili < Formula
 
   depends_on "pkg-config" => :build
   depends_on "dav1d"
-  depends_on "fontconfig"
   depends_on "freetype"
-  depends_on "gnutls"
-  depends_on "libass"
+  depends_on "libass-wiliwili"
+  depends_on "mbedtls"
 
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
@@ -55,17 +54,18 @@ class FfmpegWiliwili < Formula
       --host-cflags=#{ENV.cflags}
       --host-ldflags=#{ENV.ldflags}
       --enable-gpl
-      --enable-gnutls
+      --enable-mbedtls
       --enable-libdav1d
       --enable-libass
       --enable-libfreetype
-      --enable-libfontconfig
       --enable-libxml2
+      --disable-libfontconfig
       --disable-autodetect
       --disable-libjack
       --disable-indev=jack
       --disable-programs
       --disable-postproc
+      --disable-avdevice
       --disable-doc
       --disable-debug
       --enable-network
@@ -74,7 +74,7 @@ class FfmpegWiliwili < Formula
       --disable-encoders
     ]
 
-    args << "--enable-videotoolbox" if OS.mac?
+    args += %w[--enable-videotoolbox --enable-audiotoolbox] if OS.mac?
     args << "--enable-neon" if Hardware::CPU.arm?
 
     system "./configure", *args
