@@ -23,8 +23,8 @@ class FfmpegWiliwili < Formula
   depends_on "pkg-config" => :build
   depends_on "dav1d"
   depends_on "freetype"
+  depends_on "gnutls"
   depends_on "libass-wiliwili"
-  depends_on "mbedtls"
 
   uses_from_macos "bzip2"
   uses_from_macos "libxml2"
@@ -45,8 +45,6 @@ class FfmpegWiliwili < Formula
     # The new linker leads to duplicate symbol issue https://github.com/homebrew-ffmpeg/homebrew-ffmpeg/issues/140
     ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
 
-    ENV.append "LDFLAGS", "-Wl,-Bdynamic"
-
     args = %W[
       --prefix=#{prefix}
       --enable-shared
@@ -56,7 +54,7 @@ class FfmpegWiliwili < Formula
       --host-cflags=#{ENV.cflags}
       --host-ldflags=#{ENV.ldflags}
       --enable-gpl
-      --enable-mbedtls
+      --enable-gnutls
       --enable-libdav1d
       --enable-libass
       --enable-libfreetype
