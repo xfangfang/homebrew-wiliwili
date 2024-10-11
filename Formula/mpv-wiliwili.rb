@@ -5,8 +5,8 @@
 class MpvWiliwili < Formula
   desc "Media player based on MPlayer and mplayer2"
   homepage "https://mpv.io"
-  url "https://github.com/mpv-player/mpv/archive/refs/tags/v0.38.0.tar.gz"
-  sha256 "86d9ef40b6058732f67b46d0bbda24a074fae860b3eaae05bab3145041303066"
+  url "https://github.com/mpv-player/mpv/archive/refs/tags/v0.39.0.tar.gz"
+  sha256 "2ca92437affb62c2b559b4419ea4785c70d023590500e8a52e95ea3ab4554683"
 
   bottle do
     root_url "https://github.com/xfangfang/homebrew-wiliwili/releases/download/mpv-wiliwili-0.38.0"
@@ -25,6 +25,7 @@ class MpvWiliwili < Formula
   depends_on "ffmpeg-wiliwili@7"
   depends_on "libass"
   depends_on "libplacebo"
+  depends_on "luajit"
 
   def install
     # LANG is unset by default on macOS and causes issues when calling getlocale
@@ -38,7 +39,7 @@ class MpvWiliwili < Formula
     args = %W[
       -Dlibmpv=true
       -Dcplayer=false
-      -Dlua=disabled
+      -Dlua=luajit
 
       -Dswift-build=disabled
       -Dmacos-cocoa-cb=disabled
