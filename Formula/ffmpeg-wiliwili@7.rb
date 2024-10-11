@@ -9,10 +9,10 @@ class FfmpegWiliwiliAT7 < Formula
   sha256 "40973d44970dbc83ef302b0609f2e74982be2d85916dd2ee7472d30678a7abe6"
 
   bottle do
-    root_url "https://github.com/xfangfang/homebrew-wiliwili/releases/download/ffmpeg-wiliwili@7-7.0.1"
-    sha256 cellar: :any, arm64_sonoma: "16c3851d3c0a0581f92a473414fb73f079dce267e4b23773a5d12979c7afc24b"
-    sha256 cellar: :any, ventura:      "7907665edc26c87e810f2f32343d7e6f6ee2c2487e58fbae67ab85e4e51e992e"
-    sha256 cellar: :any, monterey:     "9130a263b551409996be048c88a0db89a7a493ef02f755425de63c2bab07e110"
+    root_url "https://github.com/xfangfang/homebrew-wiliwili/releases/download/ffmpeg-wiliwili@7-7.1"
+    sha256 cellar: :any, arm64_sequoia: "f8bca04becd0d86adc2980e0d4003f999201208916fdcc78fabef5a2a8eb8a41"
+    sha256 cellar: :any, arm64_sonoma:  "810a04100e3a9592d5eae3c568a46e8dd8d5d53c126a96f05de110a459d5353c"
+    sha256 cellar: :any, ventura:       "c252d5cf6683c4cb5d483869811b0840eda3ad395bb1fe23e0aac91ff61eb6d4"
   end
 
   keg_only <<~EOS
