@@ -31,13 +31,6 @@ class LibplaceboWiliwili < Formula
     end
   end
 
-  bottle do
-    root_url "https://github.com/xfangfang/homebrew-wiliwili/releases/download/libplacebo-wiliwili-7.349.0"
-    sha256 cellar: :any, arm64_sequoia: "5637fd0af7f8521e0b2eafe4e663e41f7a973954bb3a83be130bba1de5c40a10"
-    sha256 cellar: :any, arm64_sonoma:  "690f4c9b144af5d1e2355d33e75ad904d397cdd769168b1665e2bc3e9b061357"
-    sha256 cellar: :any, ventura:       "6d869a39241788d1786e15cba229ec1c5f60f42eff0e5f54d49f9ca716f20b08"
-  end
-
   keg_only "it is intended to only be used for building wiliwili"
 
   depends_on "meson" => :build
