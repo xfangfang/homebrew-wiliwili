@@ -7,6 +7,14 @@ class HarfbuzzWiliwili < Formula
 
   head "https://github.com/harfbuzz/harfbuzz.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/xfangfang/homebrew-wiliwili/releases/download/harfbuzz-wiliwili-10.0.1"
+    rebuild 1
+    sha256 cellar: :any, arm64_sequoia: "22680a54375c8e9e949261174445c941549bf62473244d1950a1048b597270b6"
+    sha256 cellar: :any, arm64_sonoma:  "ad554aec11499504f817bb23922ce78343edb25ffe540a9e7a1c4358fc211485"
+    sha256 cellar: :any, ventura:       "2f076457495c39d9853d0a6067a87d518c6631f1702e558828e146d061fa02f5"
+  end
+
   keg_only "it is intended to only be used for building wiliwili"
 
   depends_on "gobject-introspection" => :build
