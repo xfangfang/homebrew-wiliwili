@@ -28,6 +28,9 @@ class MpvWiliwili < Formula
   depends_on "libplacebo-wiliwili"
   depends_on "luajit"
 
+  # Fix missing symbol when cocoa is disabled
+  patch :DATA
+
   def install
     # LANG is unset by default on macOS and causes issues when calling getlocale
     # or getdefaultlocale in docutils. Force the default c/posix locale since
@@ -69,3 +72,17 @@ class MpvWiliwili < Formula
     assert_predicate fake_test, :exist?
   end
 end
+
+__END__
+diff --git a/meson.build b/meson.build
+index a02597cb68..cc4b161b7c 100644
+--- a/meson.build
++++ b/meson.build
+@@ -836,6 +836,7 @@ coreaudio = dependency('appleframeworks', modules: ['CoreFoundation', 'CoreAudio
+ features += {'coreaudio': coreaudio.found()}
+ if features['coreaudio']
+     dependencies += coreaudio
++    sources += files('osdep/utils-mac.c')
+     sources += files('audio/out/ao_coreaudio.c',
+                      'audio/out/ao_coreaudio_exclusive.c',
+                      'audio/out/ao_coreaudio_properties.c')
