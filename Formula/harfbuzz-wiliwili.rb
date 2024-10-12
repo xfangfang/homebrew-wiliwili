@@ -4,6 +4,7 @@ class HarfbuzzWiliwili < Formula
   url "https://github.com/harfbuzz/harfbuzz/archive/refs/tags/10.0.1.tar.gz"
   sha256 "e7358ea86fe10fb9261931af6f010d4358dac64f7074420ca9bc94aae2bdd542"
   license "MIT"
+  revision 1
 
   head "https://github.com/harfbuzz/harfbuzz.git", branch: "main"
 
