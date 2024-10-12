@@ -5,6 +5,14 @@ class LibassWiliwili < Formula
   sha256 "eae425da50f0015c21f7b3a9c7262a910f0218af469e22e2931462fed3c50959"
   license "ISC"
 
+  bottle do
+    root_url "https://github.com/xfangfang/homebrew-wiliwili/releases/download/libass-wiliwili-0.17.3"
+    rebuild 1
+    sha256 cellar: :any, arm64_sequoia: "49b6739981756bd117cb9b274f97f1a8cf4ca0eae5b41f1854bf360ed814457f"
+    sha256 cellar: :any, arm64_sonoma:  "94dfc9a3b636c9307de02e2d1202cdd86ddcbd2bd34c7768a968c2499c8130ce"
+    sha256 cellar: :any, ventura:       "4da7c3542e385acbac871218b518d42097714bdd5391a4c70c79c6b7f9cce1b2"
+  end
+
   head do
     url "https://github.com/libass/libass.git", branch: "master"
 
