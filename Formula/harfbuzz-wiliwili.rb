@@ -17,11 +17,9 @@ class HarfbuzzWiliwili < Formula
 
   keg_only "it is intended to only be used for building wiliwili"
 
-  depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build
-  depends_on "python@3.13" => [:build, :test]
   depends_on "freetype"
 
   def install
