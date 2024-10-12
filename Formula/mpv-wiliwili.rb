@@ -10,10 +10,10 @@ class MpvWiliwili < Formula
 
   bottle do
     root_url "https://github.com/xfangfang/homebrew-wiliwili/releases/download/mpv-wiliwili-0.39.0"
-    rebuild 3
-    sha256 cellar: :any, arm64_sequoia: "a59a5abcbd909a0ef56e8429cdec7b5c223998facebae1168c10603e7f1e81ec"
-    sha256 cellar: :any, arm64_sonoma:  "8df30b8b6bd7007150243934266a35a443f5a06a7b3dbb085afb17ea201c8f13"
-    sha256 cellar: :any, ventura:       "e698baadc57e133ef299c645855df0cbf4e167c53f8c9961b93cd2dc74240822"
+    rebuild 4
+    sha256 cellar: :any, arm64_sequoia: "398b2e7f8abbbdec22e0371f9e936a8222164dcd5586c5ee2a6e1bc049d1ea67"
+    sha256 cellar: :any, arm64_sonoma:  "c8c553ef8f4c697ad3aa1aee1d0e465baf7d9e741b209e790c64e2417fbb2151"
+    sha256 cellar: :any, ventura:       "3a5f271fbd8d45611fe0f5f1c46767a6fd7a8362bb400fcf4141e1361b2d7792"
   end
 
   keg_only "it is intended to only be used for building wiliwili"
