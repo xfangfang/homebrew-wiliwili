@@ -53,7 +53,6 @@ class FfmpegWiliwili < Formula
       --cc=#{ENV.cc}
       --host-cflags=#{ENV.cflags}
       --host-ldflags=#{ENV.ldflags}
-      --extra-ldflags="-lmbedtls -lmbedx509 -lmbedcrypto"
       --enable-gpl
       --enable-mbedtls
       --enable-libdav1d
@@ -79,7 +78,7 @@ class FfmpegWiliwili < Formula
     args += %w[--enable-videotoolbox --enable-audiotoolbox] if OS.mac?
     args << "--enable-neon" if Hardware::CPU.arm?
 
-    system "./configure", *args
+    system "./configure", *args, "--extra-ldflags=-lmbedtls -lmbedx509 -lmbedcrypto"
     system "make", "install"
   end
 
