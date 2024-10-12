@@ -38,6 +38,8 @@ class LibplaceboWiliwili < Formula
     sha256 cellar: :any, ventura:       "6d869a39241788d1786e15cba229ec1c5f60f42eff0e5f54d49f9ca716f20b08"
   end
 
+  keg_only "it is intended to only be used for building wiliwili"
+
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkg-config" => :build

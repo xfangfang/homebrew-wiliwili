@@ -12,6 +12,8 @@ class LibassWiliwili < Formula
     sha256 cellar: :any, ventura:       "337b25538c48757879f1815e83fde4427ee451499cab8b9e444e397bdf30945c"
   end
 
+  keg_only "it is intended to only be used for building wiliwili"
+
   head do
     url "https://github.com/libass/libass.git", branch: "master"
 

@@ -14,6 +14,8 @@ class HarfbuzzWiliwili < Formula
     sha256 cellar: :any, ventura:       "f8b63961e09077f2506f05ef2048af28391c4e6d00b930f62b24dd42c7018774"
   end
 
+  keg_only "it is intended to only be used for building wiliwili"
+
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
