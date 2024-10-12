@@ -8,6 +8,14 @@ class MpvWiliwili < Formula
   url "https://github.com/mpv-player/mpv/archive/refs/tags/v0.39.0.tar.gz"
   sha256 "2ca92437affb62c2b559b4419ea4785c70d023590500e8a52e95ea3ab4554683"
 
+  bottle do
+    root_url "https://github.com/xfangfang/homebrew-wiliwili/releases/download/mpv-wiliwili-0.39.0"
+    rebuild 2
+    sha256 cellar: :any, arm64_sequoia: "9cc882b78a0dd91853e1098c263d17077b9c8d4d9f5ed0ce76785e98ddc8d8fa"
+    sha256 cellar: :any, arm64_sonoma:  "03265219b8a26c0ad7dd3c12e7e757a1a64e182a481aa08ac8972a0253964f0e"
+    sha256 cellar: :any, ventura:       "7e4bc04351809c4104dbd98a818c7ea245472813f98f4a1292ae78c2fe67b2b0"
+  end
+
   keg_only "it is intended to only be used for building wiliwili"
 
   depends_on "docutils" => :build
