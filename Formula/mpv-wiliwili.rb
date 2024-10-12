@@ -18,8 +18,6 @@ class MpvWiliwili < Formula
 
   keg_only "it is intended to only be used for building wiliwili"
 
-  patch :DATA
-
   depends_on "docutils" => :build
   depends_on "meson" => :build
   depends_on "pkg-config" => :build
@@ -29,6 +27,8 @@ class MpvWiliwili < Formula
   depends_on "libass-wiliwili"
   depends_on "libplacebo-wiliwili"
   depends_on "luajit"
+
+  patch :DATA
 
   def install
     # LANG is unset by default on macOS and causes issues when calling getlocale
