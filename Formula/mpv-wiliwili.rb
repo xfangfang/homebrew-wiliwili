@@ -46,7 +46,7 @@ class MpvWiliwili < Formula
       -Dmacos-cocoa-cb=disabled
       -Dmacos-media-player=disabled
       -Dmacos-touchbar=disabled
-      -Dcocoa=disabled
+      -Dcocoa=enabled
 
       -Dlcms2=disabled
       -Djpeg=disabled
