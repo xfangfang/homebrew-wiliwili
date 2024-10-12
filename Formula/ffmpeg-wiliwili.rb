@@ -8,6 +8,14 @@ class FfmpegWiliwili < Formula
   url "https://ffmpeg.org/releases/ffmpeg-7.1.tar.xz"
   sha256 "40973d44970dbc83ef302b0609f2e74982be2d85916dd2ee7472d30678a7abe6"
 
+  bottle do
+    root_url "https://github.com/xfangfang/homebrew-wiliwili/releases/download/ffmpeg-wiliwili-7.1"
+    rebuild 2
+    sha256 cellar: :any, arm64_sequoia: "959032460c1b2eac68d9ee62a7d6e47394b4e25960813c45fd742f727185be05"
+    sha256 cellar: :any, arm64_sonoma:  "4eb4dd6a0221c22637fbff76d3771bde300eb0424d4183d20cbb515071725f87"
+    sha256 cellar: :any, ventura:       "baa40dd34356c3396034757dfadd37b20d19120d6a159680eb546b9769a1fb94"
+  end
+
   keg_only <<~EOS
     it is intended to only be used for building wiliwili.
     This formula is not recommended for daily use and has no binaraies (ffmpeg, ffplay etc.)
