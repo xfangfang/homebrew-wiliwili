@@ -28,8 +28,6 @@ class MpvWiliwili < Formula
   depends_on "libplacebo-wiliwili"
   depends_on "luajit"
 
-  patch :DATA
-
   def install
     # LANG is unset by default on macOS and causes issues when calling getlocale
     # or getdefaultlocale in docutils. Force the default c/posix locale since
@@ -48,7 +46,7 @@ class MpvWiliwili < Formula
       -Dmacos-cocoa-cb=disabled
       -Dmacos-media-player=disabled
       -Dmacos-touchbar=disabled
-      -Dcocoa=enabled
+      -Dcocoa=disabled
 
       -Dlcms2=disabled
       -Djpeg=disabled
@@ -71,20 +69,3 @@ class MpvWiliwili < Formula
     assert_predicate fake_test, :exist?
   end
 end
-
-__END__
-diff --git a/meson.build b/meson.build
-index a02597cb68..b5d5b4e54c 100644
---- a/meson.build
-+++ b/meson.build
-@@ -405,9 +405,7 @@ if features['cocoa']
-     dependencies += cocoa
-     sources += files('osdep/language-mac.c',
-                      'osdep/path-mac.m',
--                     'osdep/utils-mac.c',
--                     'osdep/mac/app_bridge.m')
--    main_fn_source = files('osdep/main-fn-mac.c')
-+                     'osdep/utils-mac.c')
- endif
- 
- if posix
