@@ -18,6 +18,8 @@ class MpvWiliwili < Formula
 
   keg_only "it is intended to only be used for building wiliwili"
 
+  patch :DATA
+
   depends_on "docutils" => :build
   depends_on "meson" => :build
   depends_on "pkg-config" => :build
@@ -69,3 +71,20 @@ class MpvWiliwili < Formula
     assert_predicate fake_test, :exist?
   end
 end
+
+__END__
+diff --git a/meson.build b/meson.build
+index a02597cb68..b5d5b4e54c 100644
+--- a/meson.build
++++ b/meson.build
+@@ -405,9 +405,7 @@ if features['cocoa']
+     dependencies += cocoa
+     sources += files('osdep/language-mac.c',
+                      'osdep/path-mac.m',
+-                     'osdep/utils-mac.c',
+-                     'osdep/mac/app_bridge.m')
+-    main_fn_source = files('osdep/main-fn-mac.c')
++                     'osdep/utils-mac.c')
+ endif
+ 
+ if posix
